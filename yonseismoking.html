@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>KakaoMap Example</title>
+  <style>
+    #map {
+      width: 100%;
+      height: 400px;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+
+  <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=0d95384b3aa7b126af6ec2782f16b16c"></script>
+  <script>
+    var container = document.getElementById('map');
+    var options = {
+      center: new kakao.maps.LatLng(37.565954, 126.938565),
+      level: 8
+    };
+
+    var map = new kakao.maps.Map(container, options);
+
+    // 핀 추가 예제
+    var markerPosition  = new kakao.maps.LatLng(37.565954, 126.938565); 
+    var marker = new kakao.maps.Marker({
+      position: markerPosition
+    });
+    marker.setMap(map);
+  </script>
+</body>
+</html>
